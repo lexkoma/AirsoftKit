@@ -1,5 +1,6 @@
 # AirsoftKit
 
-configuration in /src/main/resources/myProperties.properties
+All configuration you'll find in /src/main/resources/myProperties.properties. First of all you should configure your DB properties(username and pass). Then run app with Tomcat.
 <br>
-start http://localhost:8080/login
+start page is http://localhost:8080/login
+
