@@ -39,14 +39,8 @@ public class ItemCreateServlet extends HttpServlet {
             ItemDto itemDto = new ItemDto(-1L, request.getParameter("title"),
                     request.getParameter("description"), new BigDecimal(request.getParameter("price")),
                     Integer.parseInt(request.getParameter("quantity")), userDto.getId());
-            System.out.println(itemDto);
-            result = itemService.setItemDto(itemDto);
-//            UserDto userDto = userProfileService.getUserDto(userLogin);
-//            ItemDto itemDto = new ItemDto(-1L, request.getParameter("title"),
-//                    request.getParameter("description"), null,
-//                    1, userDto.getId());
-//            result = itemService.setItemDto(itemDto);
 
+            result = itemService.setItemDto(itemDto);
         }
 
         if (result) {

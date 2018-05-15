@@ -41,7 +41,7 @@ public class UserProfileService {
         User user = new User(userDto.getId(),
                 userDto.getName(), userDto.getLogin(),
                 userDto.getEmail(), userDto.getPassword());
-        System.out.println(user);
+        System.out.println("in setUser " + user.toString());
         boolean result = false;
 
         if (userDto.getId() < 0) {

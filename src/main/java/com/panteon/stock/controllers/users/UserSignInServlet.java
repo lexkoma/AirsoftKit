@@ -24,7 +24,6 @@ public class UserSignInServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         boolean result = false;
         String login = request.getParameter("login");
-        System.out.println(login);
         String password = request.getParameter("password");
 
         if ((login != null) && (!login.isEmpty()) && (password != null) && (!password.isEmpty())) {

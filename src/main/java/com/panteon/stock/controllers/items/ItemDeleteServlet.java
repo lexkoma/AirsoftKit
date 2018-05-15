@@ -20,8 +20,6 @@ public class ItemDeleteServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String login = (String) request.getSession().getAttribute("login");
-        System.out.println(login);
-
 
         if (login != null
                 && !login.isEmpty()

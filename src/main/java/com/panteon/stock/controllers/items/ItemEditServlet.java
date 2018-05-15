@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.math.BigDecimal;
 
 @WebServlet("/itemedit")
 public class ItemEditServlet extends HttpServlet {
@@ -31,19 +32,11 @@ public class ItemEditServlet extends HttpServlet {
             UserDto userDto = userProfileService.getUserDto(login);
             Long id = (Long) request.getSession().getAttribute("itemId");
             ItemDto itemDto = itemService.getItemDto(id);
-
             itemDto.setTitle(request.getParameter("title"));
-            System.out.println("title " + request.getParameter("title"));
-
             itemDto.setDescription(request.getParameter("description"));
-            System.out.println("description " + request.getParameter("description"));
+            itemDto.setPrice(new BigDecimal(request.getParameter("price")));
+            itemDto.setQuantity(Integer.parseInt(request.getParameter("quantity")));
 
-            itemDto.setDescription(request.getParameter("price"));
-            System.out.println("price " + request.getParameter("price"));
-
-            itemDto.setDescription(request.getParameter("quantity"));
-            System.out.println("quantity " + request.getParameter("quantity"));
-            System.out.println("Edit " + itemDto);
             result = itemService.setItemDto(itemDto);
         }
 

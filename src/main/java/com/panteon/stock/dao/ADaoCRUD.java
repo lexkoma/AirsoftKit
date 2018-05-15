@@ -137,15 +137,13 @@ public abstract class ADaoCRUD<TEntity extends AEntity> implements IDaoCRUD<TEnt
 
         try (PreparedStatement preparedStatement = connManager.getConnection().prepareStatement(query)) {
             List<Object> entityParams = getEntityParams(ADaoCRUD.UPDATE, tEntity);
-            for (int i = 1; i < entityParams.size(); i++) {
-                preparedStatement.setObject(i, entityParams.get(i));
-
+            for (int i = 1; i <= entityParams.size(); i++) {
+                preparedStatement.setObject(i, entityParams.get(i-1));
             }
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
             throw new RuntimeException(DATABASE_INPUT_ERROR, e);
-//            System.out.println("not update");
         }
     }
 

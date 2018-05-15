@@ -62,8 +62,8 @@
                             <th width=5%>Position</th>
                             <th width=25%>Title</th>
                             <th width=50%>Description</th>
-                            <%--<th width=10%>Cost</th>--%>
-                            <%--<th width=10%>Quantity</th>--%>
+                            <th width=10%>Cost</th>
+                            <th width=10%>Quantity</th>
                             <th width=10%></th>
                             <th width=10%></th>
                         </tr>
@@ -73,8 +73,8 @@
                                 <td>${count.count}</td>
                                 <td>${item.title}</td>
                                 <td>${item.description}</td>
-                                <%--<td>${item.price}</td>--%>
-                                <%--<td>${item.quantity}</td>--%>
+                                <td>${item.price}</td>
+                                <td>${item.quantity}</td>
                                 <td>
                                     <i class="material-icons center">
                                         <a href="${base}/itemedit?login=${personalEquipmentDto.userLogin}&id=${item.idItem}"

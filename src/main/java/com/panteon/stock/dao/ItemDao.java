@@ -25,7 +25,6 @@ public class ItemDao extends ADaoCRUD<Item> {
     }
 
 
-
     @Override
     protected List<Object> getEntityParams(String operation, Item item) {
         List<Object> params = new ArrayList<>();
@@ -39,7 +38,6 @@ public class ItemDao extends ADaoCRUD<Item> {
                 params.add(item.getUserId());           //5
                 break;
             case UPDATE:
-
                 params.add(item.getTitle()); //0
                 params.add(item.getDescription()); //1
                 params.add(item.getPrice()); //2

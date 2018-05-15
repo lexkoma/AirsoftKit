@@ -38,7 +38,6 @@ public class UserEditServlet extends HttpServlet {
                 response.sendRedirect("/personalEquipment");
             }
         } else {
-            System.out.println("error");
             request.setAttribute("errorProfile", "Please fill all fields");
             request.getRequestDispatcher("WEB-INF/views/users/UserProfile.jsp").forward(request, response);
         }
@@ -48,7 +47,7 @@ public class UserEditServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String login = (String) request.getSession().getAttribute(MyContext.LOGIN_ATTRIBUTE);
         UserDto userDto = userProfileService.getUserDto(login);
-        System.out.println(userDto);
+
         if (login == null) {
             request.setAttribute("errorMessage", "Please login first");
             request.getRequestDispatcher("/login").forward(request, response);
